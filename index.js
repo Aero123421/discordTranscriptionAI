@@ -1,6 +1,7 @@
 require('dotenv').config();
 const fs = require('node:fs');
 const path = require('node:path');
+const axios = require('axios');
 const { Client, Collection, GatewayIntentBits, ChannelType, Events } = require('discord.js');
 const { joinVoiceChannel, getVoiceConnection, VoiceConnectionStatus } = require('@discordjs/voice');
 const { better, defineQueue } = require('./lib/queue');

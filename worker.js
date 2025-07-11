@@ -85,7 +85,7 @@ defineWorker('transcribe', async (job) => {
 
     } catch (error) {
         console.error(`[WORKER ERROR] Failed to process ${pcmPath}:`, error);
-        job.fail(error);
+        throw error;
     }
 }, { queue });
 
@@ -128,7 +128,7 @@ defineWorker('answer-question', async (job) => {
         }
     } catch (error) {
         console.error(`[Q&A ERROR]`, error);
-        job.fail(error);
+        throw error;
     }
 }, { queue });
 
